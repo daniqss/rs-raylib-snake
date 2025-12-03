@@ -30,7 +30,7 @@
           fenix.packages.${system}.latest.rustfmt
 
           # raylib compiled with zig
-          pkgs.zig_0_13
+          pkgs.zig_0_14
           pkgs.glfw
 
           # wayland
@@ -51,7 +51,7 @@
 
         # this should work mmm
         shellHook = ''
-          if [ ! -d raylib ]; then
+          if [ ! -d raylib ] || [ -z "$(ls -A raylib 2>/dev/null)" ]; then
             git submodule update --init --recursive raylib
           fi
         '';

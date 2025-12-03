@@ -1,13 +1,11 @@
-# Snake
+# Snake in KMS/DRM
+Simple snake game written in Rust using raylib and running on KMS/DRM without a graphical session. Both game and original build script are from [tinrab](https://github.com/tinrab/rs-raylib-snake).
 
-A simple snake game written in Rust using Raylib.
+It uses Raylib zig build script to compile raylib with Zig, and use it as a static library by Rust.
 
-Code for the [How To Use Raylib in Rust With Your Own Bindings](https://rabzelj.com/blog/rust-zig-raylib-ffi-custom-bindings) blog post.
-
-![screenshot](docs/screenshot.png)
-
-## Run
-
-```bash
-$ just run
+## how to run
+By now, you can only run it in a TTY, but in the future I plan to run it over Wayland too, without extra configuration.
+```sh
+nix develop
+cargo run
 ```

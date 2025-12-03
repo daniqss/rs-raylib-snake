@@ -8,8 +8,8 @@ use rs_raylib_snake::{
     window::Window,
 };
 
-const SCREEN_WIDTH: i32 = 600;
-const SCREEN_HEIGHT: i32 = 600;
+const SCREEN_WIDTH: i32 = 1920;
+const SCREEN_HEIGHT: i32 = 1080;
 const GRID_SIZE: i32 = 40;
 
 fn main() -> Result<(), Box<dyn Error>> {

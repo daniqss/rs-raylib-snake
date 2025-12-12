@@ -1,5 +1,5 @@
 {
-  description = "DMG Game Boy Emulator for embedded devices";
+  description = "Snake in KMS/DRM with Raylib";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
@@ -30,7 +30,7 @@
           fenix.packages.${system}.latest.rustfmt
 
           # raylib compiled with zig
-          pkgs.zig_0_14
+          pkgs.zig_0_13
           pkgs.glfw
 
           # wayland
@@ -49,7 +49,6 @@
         RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
         LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
 
-        # this should work mmm
         shellHook = ''
           if [ ! -d raylib ] || [ -z "$(ls -A raylib 2>/dev/null)" ]; then
             git submodule update --init --recursive raylib

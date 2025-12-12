@@ -7,14 +7,13 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Run `zig build`
     Command::new("zig")
         .args([
-            "build", 
+            "build",
             // "-Dlinux_display_backend=Wayland"
-            "-Dplatform=drm"
+            "-Dplatform=drm",
         ])
         .current_dir(RAYLIB_DIR)
         .status()
         .expect("zig not installed");
-
 
     // Path to generated header
     let header_path = PathBuf::from(RAYLIB_OUT_DIR)
@@ -40,7 +39,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     println!("cargo:rustc-link-lib=EGL");
     println!("cargo:rustc-link-lib=drm");
     println!("cargo:rustc-link-lib=gbm");
-
 
     Ok(())
 }
